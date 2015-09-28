@@ -158,15 +158,19 @@ var _ = require('lodash');
 
                 var current = obj;
 
-                for (var i = 0; i < path.length; ++i) {
-                    if (current[path[i]] == undefined) {
-                        return undefined;
-                    } else {
-                        current = current[path[i]];
+                if (path.length === 0) {
+                    delete current[key];
+                } else {
+                    for (var i = 0; i < path.length; ++i) {
+                        if (current[path[i]] == undefined) {
+                            return undefined;
+                        } else {
+                            current = current[path[i]];
 
-                        if ((i === path.length - 1) && current[key]) {
+                            if ((i === path.length - 1) && current[key]) {
 
-                            delete current[key];
+                                delete current[key];
+                            }
                         }
                     }
                 }
@@ -194,15 +198,20 @@ var _ = require('lodash');
 
                 var current = obj;
 
-                for (var i = 0; i < path.length; ++i) {
-                    if (current[path[i]] == undefined) {
-                        return undefined;
-                    } else {
-                        current = current[path[i]];
+                if (path.length === 0) {
+                    current[key] = val;
+                } else {
+                    for (var j = 0; j < path.length; ++j) {
 
-                        if ((i === path.length - 1) && current[key]) {
+                        if (current[path[j]] == undefined) {
+                            return undefined;
+                        } else {
+                            current = current[path[j]];
 
-                            current[key] = val;
+                            if ((j === path.length - 1) && current[key]) {
+
+                                current[key] = val;
+                            }
                         }
                     }
                 }
