@@ -80,12 +80,10 @@ smaki.updateObject(key, value, [oldValue], [obj]);
 
 
 ## License
-
-Licensed under the Apache License, Version 2.0
-(<http://www.apache.org/licenses/LICENSE-2.0>)
+MIT
 
 - - -
-EJS Embedded JavaScript templates copyright 2112
-mde@fleegix.org.
+Marcos Sanz Latorre copyright 2116
+marcos.sanz@13genius.com
 
 
